@@ -18,7 +18,7 @@ switch (typeRequest) {
 }
 
 
-
+// Spotify Function
 function spotifyFunction() {
     spotify.search({ type: 'track', query: dataRequest, limit: 1 })
         .then(function (spotifyResponse) {
@@ -31,7 +31,7 @@ function spotifyFunction() {
             console.log(err);
         })
 }
-
+// Bands in Town Function
 function bandsInTownFunction() {
     axios
         .get("https://rest.bandsintown.com/artists/" + dataRequest + "/events?app_id=codingbootcamp")

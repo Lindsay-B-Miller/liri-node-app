@@ -26,7 +26,6 @@ function switchFunction() {
             doWhatItSays();
             break;
     }
-
 }
 
 // Spotify Function
@@ -76,6 +75,7 @@ function OMDBFunction() {
     if (dataRequest !== undefined) {
         OMDBRequest = dataRequest;
     }
+    // NOT WORKING
     else {
         OMDBRequest = "Mr. Nobody"
     }
@@ -93,19 +93,18 @@ function OMDBFunction() {
         })
 }
 
+// Do what it says function
 function doWhatItSays() {
     fs.readFile("random.txt", "utf8", function (error, data) {
         if (error) {
             return console.log(error);
         }
-        // console.log(data);
         var randomText = data.split(",");
         typeRequest = randomText[0];
         dataRequest = randomText[1];
-        // console.log(typeRequest);
-        // console.log(dataRequest);
         switchFunction();
     })
 }
+
 
 switchFunction();

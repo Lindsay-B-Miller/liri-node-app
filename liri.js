@@ -3,26 +3,31 @@ var Spotify = require('node-spotify-api');
 var keys = require("./keys.js");
 var axios = require("axios");
 var moment = require("moment");
+var fs = require("fs");
 var spotify = new Spotify(keys.spotify);
 var typeRequest = process.argv[2]
 var dataRequest = process.argv.slice(3).join("+");
 
 
 
+function switchFunction() {
 
-switch (typeRequest) {
-    case "spotify-this-song":
-        spotifyFunction();
-        break;
-    case "concert-this":
-        bandsInTownFunction();
-        break;
-    case "movie-this":
-        OMDBFunction();
-        break;
+    switch (typeRequest) {
+        case "spotify-this-song":
+            spotifyFunction();
+            break;
+        case "concert-this":
+            bandsInTownFunction();
+            break;
+        case "movie-this":
+            OMDBFunction();
+            break;
+        case "do-what-it-says":
+            doWhatItSays();
+            break;
+    }
+
 }
-
-
 
 // Spotify Function
 function spotifyFunction() {
@@ -44,10 +49,10 @@ function bandsInTownFunction() {
     if (dataRequest !== undefined) {
         bandsRequest = dataRequest;
     }
+    // NOT WORKING
     else {
         bandsRequest = "Celine Dion"
     }
-
     axios
         .get("https://rest.bandsintown.com/artists/" + bandsRequest + "/events?app_id=codingbootcamp")
         .then(function (bandsResponse) {
@@ -74,11 +79,9 @@ function OMDBFunction() {
     else {
         OMDBRequest = "Mr. Nobody"
     }
-
     axios
-        .get("http://www.omdbapi.com/?apikey=trilogy&t=Mr.+Nobody")
+        .get("http://www.omdbapi.com/?apikey=trilogy&t=" + OMDBRequest)
         .then(function (OMDBResponse) {
-            // console.log(OMDBResponse.data);
             console.log("* Title: " + OMDBResponse.data.Title);
             console.log("* Year of Release: " + OMDBResponse.data.Year);
             console.log("* IMDB Rating: " + OMDBResponse.data.Ratings[0].Value);
@@ -89,3 +92,20 @@ function OMDBFunction() {
             console.log("*Actors: " + OMDBResponse.data.Actors);
         })
 }
+
+function doWhatItSays() {
+    fs.readFile("random.txt", "utf8", function (error, data) {
+        if (error) {
+            return console.log(error);
+        }
+        // console.log(data);
+        var randomText = data.split(",");
+        typeRequest = randomText[0];
+        dataRequest = randomText[1];
+        // console.log(typeRequest);
+        // console.log(dataRequest);
+        switchFunction();
+    })
+}
+
+switchFunction();

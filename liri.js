@@ -5,9 +5,9 @@ var axios = require("axios");
 var moment = require("moment");
 var spotify = new Spotify(keys.spotify);
 var typeRequest = process.argv[2]
-var dataRequest = process.argv[3]
+var dataRequest = process.argv.slice(3).join("+");
 
-// nodeArgs.slice(2).join("+");
+
 
 
 switch (typeRequest) {
@@ -16,6 +16,9 @@ switch (typeRequest) {
         break;
     case "concert-this":
         bandsInTownFunction();
+        break;
+    case "movie-this":
+        OMDBFunction();
         break;
 }
 
@@ -59,5 +62,30 @@ function bandsInTownFunction() {
         })
         .catch(function (err) {
             console.log(err);
+        })
+}
+
+// OMDB Function
+function OMDBFunction() {
+    var OMDBRequest;
+    if (dataRequest !== undefined) {
+        OMDBRequest = dataRequest;
+    }
+    else {
+        OMDBRequest = "Mr. Nobody"
+    }
+
+    axios
+        .get("http://www.omdbapi.com/?apikey=trilogy&t=Mr.+Nobody")
+        .then(function (OMDBResponse) {
+            // console.log(OMDBResponse.data);
+            console.log("* Title: " + OMDBResponse.data.Title);
+            console.log("* Year of Release: " + OMDBResponse.data.Year);
+            console.log("* IMDB Rating: " + OMDBResponse.data.Ratings[0].Value);
+            console.log("* Rotton Tomatoes Rating: " + OMDBResponse.data.Ratings[1].Value);
+            console.log("* Country of Production: " + OMDBResponse.data.Country);
+            console.log("*Language: " + OMDBResponse.data.Language);
+            console.log("*Plot: " + OMDBResponse.data.Plot);
+            console.log("*Actors: " + OMDBResponse.data.Actors);
         })
 }

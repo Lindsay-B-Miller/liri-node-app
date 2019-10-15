@@ -35,10 +35,10 @@ Examples:
   ![Spotify Screen Shot](/images/Spotify.jpg?raw=true)
 2. movie-this:
   `movie-this Back to the Future`
-  ![OMDB Screen Shot](/images/OMDBScreenShot.jpg?raw=true)
+  ![OMDB Screen Shot](/images/Movie.jpg?raw=true)
 3. concert-this:
   `concert-this Big Wild`
-  ![Concert Screen Shot](/images/Movie.jpg?raw=true)
+  ![Concert Screen Shot](/images/ConcertScreenShot.jpg?raw=true)
 
 ## Notes: 
 - The argument, `do-what-it-says` runs `switchFunction` using the arguments provided in the random.txt file. Any of the arguments a-c above will work in this file for argv[2], and any text after the first argument will query the database specified. To run this function, simply type `node liri.js do-what-it-says` into the terminal. 

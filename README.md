@@ -57,3 +57,5 @@ Lindsay B Miller created this project with instructions from Trilogy Education S
 
 Project Link: https://github.com/Lindsay-B-Miller/liri-node-app
 
+Deployed Link: https://lindsay-b-miller.github.io/liri-node-app/
+

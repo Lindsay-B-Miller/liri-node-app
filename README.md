@@ -14,6 +14,7 @@ To set up your project locally:
 
 ` ` `
 SPOTIFY_ID=your-spotify-id
+
 SPOTIFY_SECRET=your-spotify-secret
 ` ` `
 ### Installation

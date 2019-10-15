@@ -102,9 +102,9 @@ function OMDBFunction() {
                 console.log("* IMDB Rating: " + OMDBResponse.data.Ratings[0].Value);
                 console.log("* Rotton Tomatoes Rating: " + OMDBResponse.data.Ratings[1].Value);
                 console.log("* Country of Production: " + OMDBResponse.data.Country);
-                console.log("*Language: " + OMDBResponse.data.Language);
-                console.log("*Plot: " + OMDBResponse.data.Plot);
-                console.log("*Actors: " + OMDBResponse.data.Actors);
+                console.log("* Language: " + OMDBResponse.data.Language);
+                console.log("* Plot: " + OMDBResponse.data.Plot);
+                console.log("* Actors: " + OMDBResponse.data.Actors);
             })
     }
     else {
@@ -117,9 +117,9 @@ function OMDBFunction() {
                 console.log("* IMDB Rating: " + OMDBResponse.data.Ratings[0].Value);
                 console.log("* Rotton Tomatoes Rating: " + OMDBResponse.data.Ratings[1].Value);
                 console.log("* Country of Production: " + OMDBResponse.data.Country);
-                console.log("*Language: " + OMDBResponse.data.Language);
-                console.log("*Plot: " + OMDBResponse.data.Plot);
-                console.log("*Actors: " + OMDBResponse.data.Actors);
+                console.log("* Language: " + OMDBResponse.data.Language);
+                console.log("* Plot: " + OMDBResponse.data.Plot);
+                console.log("* Actors: " + OMDBResponse.data.Actors);
             })
     }
 }

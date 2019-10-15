@@ -38,9 +38,9 @@ Examples:
   ![OMDB Screen Shot](/images/OMDBScreenShot.jpg?raw=true)
 3. concert-this:
   `concert-this Big Wild`
-  ![Concert Screen Shot](/images/ConcertScreenShot.jpg?raw=true)
+  ![Concert Screen Shot](/images/Movie.jpg?raw=true)
 
-#### Notes: 
+## Notes: 
 - The argument, `do-what-it-says` runs `switchFunction` using the arguments provided in the random.txt file. Any of the arguments a-c above will work in this file for argv[2], and any text after the first argument will query the database specified. To run this function, simply type `node liri.js do-what-it-says` into the terminal. 
 ![Do What It Says](/images/do-what-it-says.jpg?raw=true)
 - If no argument is entered for process.argv[3] (after specifying `movie-this`, `spotify-this-song`, etc.), the app will run a default value. `spotify-this-song` will run with "The Sign," `movie-this` will run with "Mr. Nobody", and `concert-this` will run with "Celine Dion". `do-what-it-says` does not have a default value as both values are specified in the `random.txt` file.

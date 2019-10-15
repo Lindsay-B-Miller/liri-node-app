@@ -33,22 +33,24 @@ function switchFunction() {
 
 // Spotify Function
 function spotifyFunction() {
-    spotify.search({ type: 'track', query: dataRequest, limit: 1 })
-        .then(function (spotifyResponse) {
-            console.log("Artist: " + spotifyResponse.tracks.items[0].album.artists[0].name);
-            console.log("Song Name: " + spotifyResponse.tracks.items[0].name);
-            console.log("Preview Url: " + spotifyResponse.tracks.items[0].preview_url);
-            console.log("Album Name: " + spotifyResponse.tracks.items[0].album.name);
-        })
-        .catch(function (err) {
-            spotify.search({ type: 'track', query: "The Sign", limit: 10 })
-                .then(function (spotifyResponse) {
-                    console.log("Artist: " + spotifyResponse.tracks.items[5].album.artists[0].name);
-                    console.log("Song Name: " + spotifyResponse.tracks.items[5].name);
-                    console.log("Preview Url: " + spotifyResponse.tracks.items[5].preview_url);
-                    console.log("Album Name: " + spotifyResponse.tracks.items[5].album.name);
-                })
-        })
+    if (dataRequest) {
+        spotify.search({ type: 'track', query: dataRequest, limit: 1 })
+            .then(function (spotifyResponse) {
+                console.log("Artist: " + spotifyResponse.tracks.items[0].album.artists[0].name);
+                console.log("Song Name: " + spotifyResponse.tracks.items[0].name);
+                console.log("Preview Url: " + spotifyResponse.tracks.items[0].preview_url);
+                console.log("Album Name: " + spotifyResponse.tracks.items[0].album.name);
+            })
+    }
+    else {
+        spotify.search({ type: 'track', query: "The Sign", limit: 10 })
+            .then(function (spotifyResponse) {
+                console.log("Artist: " + spotifyResponse.tracks.items[5].album.artists[0].name);
+                console.log("Song Name: " + spotifyResponse.tracks.items[5].name);
+                console.log("Preview Url: " + spotifyResponse.tracks.items[5].preview_url);
+                console.log("Album Name: " + spotifyResponse.tracks.items[5].album.name);
+            })
+    }
 
 }
 // Bands in Town Function

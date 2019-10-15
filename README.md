@@ -11,6 +11,7 @@ To set up your project locally:
 4. Install dotenv: npm install dotenv
 5. Create a `.env` file. Inside the file, insert the following code, replacing the text after =  with your own Spotify API keys.
 - Get a free Spotify API key at https://developer.spotify.com/my-applications/#!/
+
 ` ` `
 SPOTIFY_ID=your-spotify-id
 SPOTIFY_SECRET=your-spotify-secret
@@ -27,10 +28,12 @@ This app is designed to run in the terminal. As is customary with node, enter no
   c. `concert-this` (runs axios to query BandsInTown)
   d. `do-what-it-says` (runs the arguments listed in the random.txt file--see #3 below)
 2. Type the second argument. This argument will specify the data requested from a-c above. Because of the `.slice(3).join("+")`, this argument does not require quotations.
+
 Examples: 
-1. `spotify-this-song Why Georgia`, 
+1. `spotify-this-song Why Georgia`
 ![Spotify Screen Shot](/images/Spotify.jpg?raw=true)
 2. `movie-this Back to the Future`
+![OMDB Screen Shot]()
 #### Notes: 
 - The argument, `do-what-it-says` runs `switchFunction` using the arguments provided in the random.txt file. Any of the arguments a-c above will work in this file for argv[2], and any text after the first argument will query the database specified. To run this function, simply type `node liri.js do-what-it-says` into the terminal. 
 - If no argument is entered for process.argv[3] (after specifying `movie-this`, `spotify-this-song`, etc.), the app will run a default value. `spotify-this-song` will run with "The Sign," `movie-this` will run with "Mr. Nobody", and `concert-this` will run with "Celine Dion". `do-what-it-says` does not have a default value as both values are specified in the `random.txt` file.

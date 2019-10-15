@@ -53,6 +53,7 @@ Examples:
 
 
 ## Contact
-Lindsay B Miller created this project with instructions from Trilogy Education Services
+Lindsay B Miller created this project with instructions from Trilogy Education Services.
+
 Project Link: https://github.com/Lindsay-B-Miller/liri-node-app
 

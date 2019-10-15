@@ -30,13 +30,26 @@ This app is designed to run in the terminal. As is customary with node, enter no
 2. Type the second argument. This argument will specify the data requested from a-c above. Because of the `.slice(3).join("+")`, this argument does not require quotations.
 
 Examples: 
-1. `spotify-this-song Why Georgia`
-![Spotify Screen Shot](/images/Spotify.jpg?raw=true)
-2. `movie-this Back to the Future`
-![OMDB Screen Shot]()
+1. spotify-this-song: 
+  `spotify-this-song Why Georgia`
+  ![Spotify Screen Shot](/images/Spotify.jpg?raw=true)
+2. movie-this:
+  `movie-this Back to the Future`
+  ![OMDB Screen Shot](/images/OMDBScreenShot.jpg?raw=true)
+3. concert-this:
+  `concert-this Big Wild`
+  ![Concert Screen Shot](/images/ConcertScreenShot.jpg?raw=true)
+
 #### Notes: 
 - The argument, `do-what-it-says` runs `switchFunction` using the arguments provided in the random.txt file. Any of the arguments a-c above will work in this file for argv[2], and any text after the first argument will query the database specified. To run this function, simply type `node liri.js do-what-it-says` into the terminal. 
+![Do What It Says](/images/do-what-it-says.jpg?raw=true)
 - If no argument is entered for process.argv[3] (after specifying `movie-this`, `spotify-this-song`, etc.), the app will run a default value. `spotify-this-song` will run with "The Sign," `movie-this` will run with "Mr. Nobody", and `concert-this` will run with "Celine Dion". `do-what-it-says` does not have a default value as both values are specified in the `random.txt` file.
+1. `spotify-this-song`
+  ![Spotify Blank](/images/SpotifyBlank.jpg?raw=true)
+2. `movie-this`
+  ![OMDB Screen Shot](/images/MovieBlank.jpg?raw=true)
+3. `concert-this`
+  ![Concert Blank](/images/ConcertBlank.jpg?raw=true)
 
 
 ## Contact
